@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import random
+import time
 
 from streamlit_autorefresh import st_autorefresh
 
@@ -82,7 +83,8 @@ with st.sidebar:
 # Auto refresh (only when running)
 # -----------------------------
 if st.session_state.running:
-    st_autorefresh(interval=5000, key="traffic_refresh")
+    time.sleep(5)
+    st.rerun()
 
 # -----------------------------
 # Initialize components
